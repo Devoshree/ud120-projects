@@ -11,7 +11,7 @@
 import sys
 
 from time import time
-sys.path.append("....\tools\...")
+sys.path.append("F:\Downloads\udacity\ud120-projects-master\tools")## here you can put according to your sys
 from email_preprocess import preprocess
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
@@ -30,8 +30,12 @@ def nb_text_test():
 	
 	
 	clf = GaussianNB()
+	t0 = time()
 	clf.fit(features_train,labels_train)
+	print "training time:", round(time()-t0, 3), "s"
+	t0 = time()
 	pred = clf.predict(features_test)
+	print "predicting time:", round(time()-t0, 3), "s"
 	accuracy = accuracy_score(pred,labels_test)
 	return accuracy
 #########################################################
