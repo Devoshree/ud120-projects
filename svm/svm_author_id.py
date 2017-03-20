@@ -19,17 +19,15 @@ from sklearn.metrics import accuracy_score
 ### and testing datasets, respectively
 ### labels_train and labels_test are the corresponding item labels
 features_train,features_test,labels_train, labels_test = preprocess()
-features_train = features_train[:len(features_train)/100] 
-labels_train = labels_train[:len(labels_train)/100] 
 
 
 
 #########################################################
 ### your code goes here ###
-clf = SVC(kernel="rbf")
-clf.fit(features_train,labels_train)
+clf = SVC(C=10000, kernel='rbf')
 t0 = time()
-SVC(C=100, cache_size=200, class_weight=None, coef0=0.0,
+clf.fit(features_train,labels_train)
+SVC(C=10000, cache_size=200, class_weight=None, coef0=0.0,
     decision_function_shape='ovo', degree=3, gamma='auto', kernel='rbf',
     max_iter=-1, probability=False, random_state=None, shrinking=True,
     tol=0.001, verbose=False)
