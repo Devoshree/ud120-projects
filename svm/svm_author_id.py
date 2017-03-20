@@ -37,7 +37,16 @@ pred = clf.predict(features_test)
 print "predicting time:", round(time()-t0, 3), "s"
 accuracy = accuracy_score(pred,labels_test)
 print accuracy
-
+# adding prdection for particular element
+print pred[10]
+print pred[26]
+print pred[50]
+#How Many Chris Emails Predicted
+#here we would work upon whole data-set 
+#len(pred)
+#n = []
+#[n.append(e) for e in pred if e == 1]
+#len(n)
 
 #########################################################
 
